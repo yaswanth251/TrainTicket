@@ -1,10 +1,9 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
-
+import './Receipt.css'
 const Receipt = () => {
     const location = useLocation();
     const { passengerDetails, travelDate } = location.state || { passengerDetails: [], travelDate: '' };
-
     return (
         <div>
             <h1>Receipt</h1>

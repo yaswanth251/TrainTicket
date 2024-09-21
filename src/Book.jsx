@@ -63,9 +63,11 @@ const Book = () => {
 
     return (
         <div>
-            <h1>Reserve Your Seat</h1>
+            <h1>Reserve Your Seat!</h1>
+            <div className="aa">
             <p>Total Tickets: {ticketCount}</p>
             <p>Seats Selected: {selectedSeatsCount}</p>
+            </div>
             <div className="seating-area">
                 {seats.map((row, rowIndex) => (
                     <div key={rowIndex} className="seat-row">
@@ -81,7 +83,7 @@ const Book = () => {
                     </div>
                 ))}
             </div>
-            <button onClick={handleBook}>Book</button>
+            <button id="btn2" onClick={handleBook}>Confirm</button>
             <ToastContainer />
         </div>
     );

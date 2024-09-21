@@ -1,0 +1,62 @@
+.info {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    top: 1rem;
+}
+
+#person {
+    padding: 1rem;
+    background-color: rgb(4, 4, 100);
+    font-family: Arial, Helvetica, sans-serif;
+    gap: 1rem;
+    position: relative;
+    top: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 80vh;
+    width: max-content;
+}
+
+#btn3 {
+    padding: 0.5rem;
+    position: relative;
+    left: 120vh;
+}
+
+/* Media Query for medium screens (tablets, etc.) */
+@media screen and (max-width: 1024px) {
+    #person {
+        margin-left: 50vh; /* Adjust margin for smaller screens */
+    }
+
+    #btn3 {
+        position: relative;
+        top: 2rem;
+        left: 80vh; /* Adjust button position */
+    }
+}
+
+/* Media Query for small screens (mobile devices) */
+@media screen and (max-width: 600px) {
+    #person {
+        margin-left: 0; /* Remove margin on mobile */
+        top: 1rem; /* Adjust top position */
+        width: 90%; /* Make the width responsive */
+    }
+
+    #btn3 {
+        position: relative;
+        top: 2rem;
+        left: 0;
+        margin: 0 auto; /* Center button on mobile */
+        display: block; /* Ensure block-level display for button */
+    }
+
+    .info {
+        overflow-x: hidden;
+        top: 0.5rem; /* Adjust position of info */
+    }
+}

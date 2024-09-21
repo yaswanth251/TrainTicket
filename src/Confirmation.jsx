@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import './Confirmation.css'
 
 const Confirmation = () => {
     const location = useLocation();
@@ -30,8 +31,10 @@ const Confirmation = () => {
     };
 
     return (
-        <div>
-            <h1>Confirmation</h1>
+        <>
+        <h1>Confirmation</h1>
+        <div className='info'>
+            
             <div>
                 <label>Pickup:</label>
                 <input type="text" value={pickup} onChange={(e) => setPickup(e.target.value)} />
@@ -44,8 +47,10 @@ const Confirmation = () => {
                 <label>Travel Date:</label>
                 <input type="date" value={travelDate} onChange={(e) => setTravelDate(e.target.value)} />
             </div>
+            </div>
+            <div className="names">
             {passengerDetails.map((passenger, index) => (
-                <div key={index}>
+                <div key={index} id='person'>
                     <h4>Passenger {index + 1}</h4>
                     <input
                         type="text"
@@ -70,9 +75,10 @@ const Confirmation = () => {
                     </select>
                 </div>
             ))}
-            <button onClick={handleConfirm}>Confirm</button>
+            <button id='btn3' onClick={handleConfirm}>Confirm</button>
             <ToastContainer />
-        </div>
+            </div>
+        </>
     );
 };
 

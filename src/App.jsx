@@ -9,7 +9,7 @@ function App() {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [phone, setPhone] = useState('');
-    const [ticketCount, setTicketCount] = useState(0);
+    const [ticketCount, setTicketCount] = useState();
     const navigate = useNavigate(); // useNavigate to programmatically navigate
 
     const handleSubmit = (event) => {
@@ -32,14 +32,17 @@ function App() {
         }
 
         // If everything is valid, navigate to the book page
-        navigate('/book', { state: { ticketCount } });
+        else{
+            navigate('/book', { state: { ticketCount } });
+        }
     };
 
     return (
         <div id='mainn'>
             <h1 id='heading'>Welcome to Indian Railway Ticket Booking Portal</h1>
             <div className='topp'>
-                <h1>Railway Bookings</h1>
+                <h1>Book Your Ticket!</h1>
+                
                 <form id='input-field' onSubmit={handleSubmit}>
                     <div className="form-row">
                         <ul className="labels">
@@ -86,7 +89,7 @@ function App() {
                             </div>
                         </div>
                     </div>
-                    <button type="submit">Proceed to Book</button>
+                    <button id='btn1' type="submit">Proceed to Book</button>
                 </form>
                 <ToastContainer /> {/* Ensure ToastContainer is included to display the toast */}
             </div>
